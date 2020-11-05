@@ -23,16 +23,13 @@ import static org.bukkit.Bukkit.getServer;
 public class Faction {
 
     // saved
-    private ArrayList<UUID> members = new ArrayList<>();
+    private Roster roster = null;
     private ArrayList<String> enemyFactions = new ArrayList<>();
-    private ArrayList<UUID> officers = new ArrayList<>();
     private ArrayList<String> allyFactions = new ArrayList<>();
     private ArrayList<String> laws = new ArrayList<>();
-    private ArrayList<String> vassals = new ArrayList<>();
     private String name = "defaultName";
     private String description = "defaultDescription";
     private String liege = "none";
-    private UUID owner = UUID.randomUUID();
     private int cumulativePowerLevel = 0;
     private Location factionHome = null;
     private ArrayList<Gate> gates = new ArrayList<>();
@@ -49,10 +46,11 @@ public class Faction {
 
     // player constructor
     public Faction(String initialName, UUID creator, int max, Main main) {
-        setName(initialName);
-        setOwner(creator);
-        maxPower = max;
         this.main = main;
+        roster = new Roster(main);
+        setName(initialName);
+        roster.setOwner(creator);
+        maxPower = max;
     }
 
     // server constructor
@@ -73,8 +71,8 @@ public class Faction {
         this.load(data);
     }
 
-    public int getNumOfficers() {
-        return officers.size();
+    public Roster getRoster() {
+        return roster;
     }
 
     public void addLaw(String newLaw) {
@@ -165,7 +163,7 @@ public class Faction {
 
     public int getCumulativePowerLevel() {
         int powerLevel = 0;
-        for (UUID playerUUID : members){
+        for (UUID playerUUID : roster.getMemberArrayList()){
             try
             {
             	powerLevel += getPlayersPowerRecord(playerUUID, main.playerPowerRecords).getPowerLevel();
@@ -176,33 +174,6 @@ public class Faction {
             }
         }
         return powerLevel;
-    }
-
-    public int calculateMaxOfficers(){
-        int officersPerXNumber = main.getConfig().getInt("officerPerMemberCount");
-        int officersFromConfig = members.size() / officersPerXNumber;
-        return 1 + officersFromConfig;
-    }
-
-    public boolean addOfficer(UUID newOfficer) {
-        if (officers.size() < calculateMaxOfficers() && !officers.contains(newOfficer)){
-            officers.add(newOfficer);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public boolean removeOfficer(UUID officerToRemove) {
-        return officers.remove(officerToRemove);
-    }
-
-    public boolean isOfficer(UUID uuid) {
-        return officers.contains(uuid);
-    }
-
-    public ArrayList<UUID> getMemberArrayList() {
-        return members;
     }
 
     public void toggleAutoClaim() {
@@ -265,26 +236,6 @@ public class Faction {
         return invited.contains(uuid);
     }
 
-    public ArrayList<UUID> getMemberList() {
-        return members;
-    }
-
-    public int getPopulation() {
-        return members.size();
-    }
-
-    public void setOwner(UUID UUID) {
-        owner = UUID;
-    }
-
-    public boolean isOwner(UUID UUID) {
-        return owner.equals(UUID);
-    }
-
-    public UUID getOwner() {
-        return owner;
-    }
-
     public void setName(String newName) {
         name = newName;
     }
@@ -302,17 +253,17 @@ public class Faction {
     }
 
     public void addMember(UUID UUID, int power) {
-        members.add(UUID);
+        roster.getMemberArrayList().add(UUID);
         cumulativePowerLevel = cumulativePowerLevel + power;
     }
 
     public void removeMember(UUID UUID, int power) {
-        members.remove(UUID);
+        roster.getMemberArrayList().remove(UUID);
         cumulativePowerLevel = cumulativePowerLevel - power;
     }
 
     public boolean isMember(UUID uuid) {
-        return members.contains(uuid);
+        return roster.getMemberArrayList().contains(uuid);
     }
 
     public Map<String, String> save() {
