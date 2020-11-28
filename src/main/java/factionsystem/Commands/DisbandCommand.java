@@ -32,17 +32,17 @@ public class DisbandCommand {
                         if (main.factions.get(i).getName().equalsIgnoreCase(factionName)) {
 
                             removeFaction(i);
-                            player.sendMessage(ChatColor.GREEN + factionName + " has been successfully disbanded.");
+                            player.sendMessage(ChatColor.GREEN + factionName + " ha sido eliminada.");
                             return true;
 
                         }
 
                     }
-                    player.sendMessage(ChatColor.RED + "That faction wasn't found!");
+                    player.sendMessage(ChatColor.RED + "¡Facción no encontrada!");
                     return false;
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "Sorry! In order to use this command you need the following permission: 'mf.disband.others'");
+                    player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'mf.disband.others'");
                     return false;
                 }
 
@@ -55,18 +55,18 @@ public class DisbandCommand {
                     if (main.factions.get(i).getPopulation() == 1) {
                         main.playersInFactionChat.remove(player.getUniqueId());
                         removeFaction(i);
-                        player.sendMessage(ChatColor.GREEN + "Faction successfully disbanded.");
+                        player.sendMessage(ChatColor.GREEN + "La facción ha sido eliminada.");
                         return true;
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "You need to kick all players before you can disband your faction.");
+                        player.sendMessage(ChatColor.RED + "Tienes que echar a todos los miembros antes de eliminar tu facción.");
                         return false;
                     }
                 }
             }
 
             if (!owner) {
-                player.sendMessage(ChatColor.RED + "You need to be the owner of a faction to use this command.");
+                player.sendMessage(ChatColor.RED + "Tienes que ser miembro de una facción para usar este comando.");
                 return false;
             }
         }
