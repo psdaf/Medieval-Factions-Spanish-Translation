@@ -44,7 +44,7 @@ public class AddLawCommand {
 
             }
             else {
-                player.sendMessage(ChatColor.RED + "Tienes que ser parte de una facción para user este comando!");
+                player.sendMessage(ChatColor.RED + "¡Tienes que ser parte de una facción para usar este comando!");
             }
         }
         else {
