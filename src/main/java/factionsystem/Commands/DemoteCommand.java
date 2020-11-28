@@ -31,18 +31,18 @@ public class DemoteCommand {
                             if (faction.isOwner(player.getUniqueId())) {
                                 if (faction.removeOfficer(officerUUID)) {
 
-                                    player.sendMessage(ChatColor.GREEN + "Player demoted!");
+                                    player.sendMessage(ChatColor.GREEN + "¡Se le bajó el rango al jugador!");
 
                                     try {
                                         Player target = getServer().getPlayer(officerUUID);
-                                        target.sendMessage(ChatColor.RED + "You have been demoted to member status in your faction.");
+                                        target.sendMessage(ChatColor.RED + "Se te fue revocado el rango de miembro en tu facción.");
                                     }
                                     catch(Exception ignored) {
 
                                     }
                                 }
                                 else {
-                                    player.sendMessage(ChatColor.RED + "That player isn't an officer in your faction!");
+                                    player.sendMessage(ChatColor.RED + "¡Ese jugador no es oficial de tu facción!");
                                 }
                                 return;
                             }
@@ -50,11 +50,11 @@ public class DemoteCommand {
                     }
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "Usage: /mf demote (player-name)");
+                    player.sendMessage(ChatColor.RED + "Uso: /mf demote (nombre-jugador)");
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "You need to be in a faction to use this command.");
+                player.sendMessage(ChatColor.RED + "Tienes que pertenecer a una facción para usar este comando.");
             }
         }
     }
