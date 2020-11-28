@@ -40,26 +40,26 @@ public class KickCommand {
 
                                     faction.removeMember(playerUUID, getPlayersPowerRecord(player.getUniqueId(), main.playerPowerRecords).getPowerLevel());
                                     try {
-                                        sendAllPlayersInFactionMessage(faction, ChatColor.RED + args[1] + " has been kicked from " + faction.getName());
+                                        sendAllPlayersInFactionMessage(faction, ChatColor.RED + args[1] + " fue echado de " + faction.getName());
                                     } catch (Exception ignored) {
 
                                     }
                                     try {
                                         Player target = Bukkit.getServer().getPlayer(args[1]);
-                                        target.sendMessage(ChatColor.RED + "You have been kicked from your faction by " + player.getName() + ".");
+                                        target.sendMessage(ChatColor.RED + "Fuiste echado de la facción por " + player.getName() + ".");
                                     } catch (Exception ignored) {
 
                                     }
                                     return true;
                                 }
                                 else {
-                                    player.sendMessage(ChatColor.RED + "You can't kick the owner.");
+                                    player.sendMessage(ChatColor.RED + "No puedes echar al dueño, picarón.");
                                     return false;
                                 }
 
                             }
                             else {
-                                player.sendMessage(ChatColor.RED + "You can't kick yourself.");
+                                player.sendMessage(ChatColor.RED + "No puedes echarte a ti mismo.");
                                 return false;
                             }
 
@@ -68,12 +68,12 @@ public class KickCommand {
                 }
 
                 if (!owner) {
-                    player.sendMessage(ChatColor.RED + "You need to be the owner of a faction to use this command.");
+                    player.sendMessage(ChatColor.RED + "Tienes que ser el dueño de una facción para realizar el comando.");
                     return false;
                 }
 
             } else {
-                player.sendMessage(ChatColor.RED + "Usage: /mf kick (player-name)");
+                player.sendMessage(ChatColor.RED + "Uso: /mf kick (nombre-jugador)");
                 return false;
             }
         }
