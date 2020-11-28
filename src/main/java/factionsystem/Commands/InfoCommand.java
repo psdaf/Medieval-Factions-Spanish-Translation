@@ -26,7 +26,7 @@ public class InfoCommand {
                         return;
                     }
                 }
-                player.sendMessage(ChatColor.RED + "You're not in a faction!");
+                player.sendMessage(ChatColor.RED + "¡No perteneces a una facción!");
             }
             else {
                 // creating name from arguments 1 to the last one
@@ -40,7 +40,7 @@ public class InfoCommand {
                     }
                 }
                 if (!exists) {
-                    player.sendMessage(ChatColor.RED + "That faction wasn't found!");
+                    player.sendMessage(ChatColor.RED + "¡Facción no encontrada!");
                 }
             }
         }
