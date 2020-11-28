@@ -31,12 +31,12 @@ public class DuelCommand {
 						{
 							if (args[2].equalsIgnoreCase(player.getName()))
 							{
-								player.sendMessage(ChatColor.RED + "You cannot duel yourself!");
+								player.sendMessage(ChatColor.RED + "No puedes luchar contigo mismo... creo.");
 								return;
 							}
 							if (UtilitySubsystem.isDuelling(player, main))
 							{
-								player.sendMessage(ChatColor.RED + "You are already duelling someone!");
+								player.sendMessage(ChatColor.RED + "¡Ya estás luchando contra alguien!");
 								return;
 							}
 							Player target = Bukkit.getServer().getPlayer(args[2]);
@@ -50,18 +50,18 @@ public class DuelCommand {
 										timeLimit = Integer.parseInt(args[3]);
 									}
 									UtilitySubsystem.inviteDuel(player, target, timeLimit, main);
-									player.sendMessage(ChatColor.AQUA + "You have challenged " + target.getName() + " to a duel!");
+									player.sendMessage(ChatColor.AQUA + "¡Retaste a " + target.getName() + " a un duelo!");
 									return;
 								}
 								else
 								{
-									player.sendMessage(ChatColor.RED + target.getName() + " is already duelling someone!");
+									player.sendMessage(ChatColor.RED + target.getName() + " ya está luchando con alguien.");
 									return;
 								}
 							}
 							else
 							{
-								player.sendMessage(ChatColor.RED + "Could not find any player named '" + args[2] + "'.");
+								player.sendMessage(ChatColor.RED + "No se encontró nadie llamado '" + args[2] + "'.");
 								return;
 							}
 						}
@@ -70,7 +70,7 @@ public class DuelCommand {
 					{
 						if (UtilitySubsystem.isDuelling(player, main))
 						{
-							player.sendMessage(ChatColor.RED + "You are already duelling someone!");
+							player.sendMessage(ChatColor.RED + "¡Ya estás luchando contra alguien!");
 							return;
 						}
 						// If a name is specified to accept the challenge from, look for that specific name.
@@ -82,7 +82,7 @@ public class DuelCommand {
 		                	{
 		                		if (duel.getStatus().equals(Duel.DuelState.DUELLING))
 		                		{
-									player.sendMessage(ChatColor.RED + "You are already duelling " + args[2] + "!");
+									player.sendMessage(ChatColor.RED + "Ya estás luchando contra " + args[2] + "!");
 									return;
 		                		}
 		                		if (duel.isChallenged(player))
@@ -91,13 +91,13 @@ public class DuelCommand {
 		                		}
 		                		else
 		                		{
-									player.sendMessage(ChatColor.RED + "You have not been challenged to a duel by '" + args[2] + "'.");
+									player.sendMessage(ChatColor.RED + "El jugador '" + args[2] + "' te ha retado a un duelo.");
 									return;	
 		                		}
 		                	}
 		                	else
 		                	{
-								player.sendMessage(ChatColor.RED + "You have not been challenged to a duel by '" + args[2] + "'.");
+								player.sendMessage(ChatColor.RED + "No fuiste retado a un duelo por '" + args[2] + "'.");
 								return;
 		                	}
 						}
@@ -108,7 +108,7 @@ public class DuelCommand {
 		                	{
 		                		if (duel.getStatus().equals(Duel.DuelState.DUELLING))
 		                		{
-									player.sendMessage(ChatColor.RED + "You are already duelling!");
+									player.sendMessage(ChatColor.RED + "¡Ya estás luchando!");
 									return;
 		                		}
 		                		if (duel.isChallenged(player))
@@ -117,13 +117,13 @@ public class DuelCommand {
 		                		}
 		                		else
 		                		{
-									player.sendMessage(ChatColor.RED + "You have not been challenged to a duel by anyone.");
+									player.sendMessage(ChatColor.RED + "Nadie te ha retado a un duelo.");
 									return;	
 		                		}
 		                	}
 		                	else
 		                	{
-								player.sendMessage(ChatColor.RED + "You have not been challenged to a duel by anyone.");
+								player.sendMessage(ChatColor.RED + "Nadie te ha retado a un duelo.");
 								return;
 		                	}
 						}
@@ -137,42 +137,42 @@ public class DuelCommand {
 		                	{
 		                		if (duel.getStatus().equals(Duel.DuelState.DUELLING))
 		                		{
-									player.sendMessage(ChatColor.RED + "Cannot cancel an active duel.");
+									player.sendMessage(ChatColor.RED + "No puedes cancelar un duelo activo.");
 									return;
 		                		}
 		                		else
 		                		{
 		                			main.duelingPlayers.remove(duel);
-									player.sendMessage(ChatColor.AQUA + "Duel challenge cancelled.");
+									player.sendMessage(ChatColor.AQUA + "Duelo cancelado.");
 									return;
 		                		}
 		                	}
 		                	else
 		                	{
-								player.sendMessage(ChatColor.AQUA + "You have no pending challenges to cancel.");
+								player.sendMessage(ChatColor.AQUA + "No hay ningún duelo para cancelar.");
 								return;
 		                	}
 		                }
 	                	else
 	                	{
-							player.sendMessage(ChatColor.AQUA + "You have no pending challenges to cancel.");
+							player.sendMessage(ChatColor.AQUA + "No hay ningún duelo para cancelar.");
 							return;
 	                	}
 
 					}
 					else
 					{
-				        sender.sendMessage(ChatColor.RED + "Sub-commands:");
-				        sender.sendMessage(ChatColor.RED + "/mf duel challenge (player)");
-				        sender.sendMessage(ChatColor.RED + "/mf duel accept (<optional>player)");
+				        sender.sendMessage(ChatColor.RED + "Sub-comandos:");
+				        sender.sendMessage(ChatColor.RED + "/mf duel challenge (jugador)");
+				        sender.sendMessage(ChatColor.RED + "/mf duel accept (<opcional>jugador)");
 				        sender.sendMessage(ChatColor.RED + "/mf duel cancel");
 					}
 				}
 				else
 				{
-			        sender.sendMessage(ChatColor.RED + "Sub-commands:");
-			        sender.sendMessage(ChatColor.RED + "/mf duel challenge (player) (<optional>time limit in seconds)");
-			        sender.sendMessage(ChatColor.RED + "/mf duel accept (<optional>player)");
+			        sender.sendMessage(ChatColor.RED + "Sub-comandos:");
+			        sender.sendMessage(ChatColor.RED + "/mf duel challenge (jugador) (<opcional>límite de tiempo en segundos)");
+			        sender.sendMessage(ChatColor.RED + "/mf duel accept (<opcional>jugador)");
 			        sender.sendMessage(ChatColor.RED + "/mf duel cancel");
 				}
 			}
