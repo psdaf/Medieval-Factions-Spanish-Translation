@@ -17,81 +17,81 @@ public class HelpCommand {
                 sendPageOne(sender);
             }
             if (args[1].equalsIgnoreCase("2")) {
-                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Medieval Factions Commands Page 2/6 == " + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf kick - Kick a player from your faction. " + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf transfer - Transfer ownership of your faction to another player.\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf disband - Disband your faction (must be owner)." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf declarewar - Declare war against another faction." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf makepeace - Send peace offer to another faction." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf claim - Claim land for your faction." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf unclaim - Unclaim land for your faction." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf unclaimall - Unclaim all land for your faction." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf checkclaim - Check if land is claimed." + "\n");
+                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Comandos Medieval Factions Página 2/6 == " + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf kick - Saca a un jugador de tu facción. " + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf transfer - Cede el liderazgo de la facción a otro jugador.\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf disband - Elimina la facción (tienes que ser dueño)." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf declarewar - Declara la guerra a otra facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf makepeace - Intenta hacer la paz con otra facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf claim - Adquiere tierras para tu facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf unclaim - Elimina tierras de tu facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf unclaimall - Elimina todas las tierras de tu facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf checkclaim - Muestra si esa tierra le pertenece a alguien." + "\n");
             }
             if (args[1].equalsIgnoreCase("3")) {
-                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Medieval Factions Commands Page 3/6 == " + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf autoclaim - Toggle auto claim, making land claiming easier." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf promote - Promote a player to officer status." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf demote - Demote an officer to member status." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf power - Check your power level." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf sethome - Set your faction home." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf home - Teleport to your faction home." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf who - View the faction info a specific player." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf ally - Attempt to ally with a faction." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf breakalliance - Break an alliance with a faction." + "\n");
+                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Comandos Medieval Factions Página 3/6 == " + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf autoclaim - Activa/desactiva la adquisición de tierras automática." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf promote - Convierte a un jugador en oficial de la facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf demote - Convierte a un oficial en miembro normal." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf power - Mira tu nivel de poder." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf sethome - Establece el Home de tu facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf home - Teleportarte al Home de tu facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf who - Mira la información de un jugador." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf ally - Intenta aliarte con una facción." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf breakalliance - Rompe la alianza con una facción." + "\n");
             }
             if (args[1].equalsIgnoreCase("4")) {
-                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Medieval Factions Commands Page 4/6 == " + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf rename - Rename your faction" + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf lock - Lock a chest or door." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf unlock Unlock a chest or door." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf grantaccess - Grant someone access to a locked block.");
-                sender.sendMessage(ChatColor.AQUA + "/mf checkaccess - Check who has access to a locked block.");
-                sender.sendMessage(ChatColor.AQUA + "/mf revokeaccess - Revoke someone's access to a locked block.");
-                sender.sendMessage(ChatColor.AQUA + "/mf laws - View the laws of your faction.");
-                sender.sendMessage(ChatColor.AQUA + "/mf addlaw - Add a law to your faction.");
-                sender.sendMessage(ChatColor.AQUA + "/mf removelaw - Remove a law from your faction.");
+                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Comandos Medieval Factions Página 4/6 == " + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf rename - Renombra tu facción" + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf lock - Bloquea un cofre o puerta." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf unlock Desbloquea un cofre o puerta." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf grantaccess - Da acceso a otro usuario al cofre/puerta bloqueado.");
+                sender.sendMessage(ChatColor.AQUA + "/mf checkaccess - Mira quién tiene acceso al bloque bloqueado.");
+                sender.sendMessage(ChatColor.AQUA + "/mf revokeaccess - Remueve el acceso de un jugador al bloque bloqueado.");
+                sender.sendMessage(ChatColor.AQUA + "/mf laws - Mira las leyes de tu facción.");
+                sender.sendMessage(ChatColor.AQUA + "/mf addlaw - Añade una ley a tu facción.");
+                sender.sendMessage(ChatColor.AQUA + "/mf removelaw - Elimina una ley de tu facción.");
             }
             if (args[1].equalsIgnoreCase("5")) {
-                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Medieval Factions Commands Page 5/6 == " + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf editlaw - Edit an already existing law in your faction.");
-                sender.sendMessage(ChatColor.AQUA + "/mf chat - Toggle faction chat.");
-                sender.sendMessage(ChatColor.AQUA + "/mf vassalize - Offer to vassalize a faction.");
-                sender.sendMessage(ChatColor.AQUA + "/mf swearfealty - Swear fealty to a faction.");
-                sender.sendMessage(ChatColor.AQUA + "/mf declareindependence - Declare independence from your liege.");
-                sender.sendMessage(ChatColor.AQUA + "/mf grantindependence - Grant a vassal vaction independence.");
-		        sender.sendMessage(ChatColor.AQUA + "/mf gate create (<optional>name)");
-		        sender.sendMessage(ChatColor.AQUA + "/mf gate name (<optional>name)");
+                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Comandos Medieval Factions Página 5/6 == " + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf editlaw - Edita una ley existente de tu facción.");
+                sender.sendMessage(ChatColor.AQUA + "/mf chat - Activa/Desactiva el chat de facción.");
+                sender.sendMessage(ChatColor.AQUA + "/mf vassalize - Ofrecer convertir facción en vasalla.");
+                sender.sendMessage(ChatColor.AQUA + "/mf swearfealty - Jura lealtad a una facción.");
+                sender.sendMessage(ChatColor.AQUA + "/mf declareindependence - Declarar independencia de tu alteza.");
+                sender.sendMessage(ChatColor.AQUA + "/mf grantindependence - Declarar una facción vasalla independiente.");
+		        sender.sendMessage(ChatColor.AQUA + "/mf gate create (<opcional>nombre)");
+		        sender.sendMessage(ChatColor.AQUA + "/mf gate name (<opcional>nombre)");
 		        sender.sendMessage(ChatColor.AQUA + "/mf gate list");
 		        sender.sendMessage(ChatColor.AQUA + "/mf gate remove");
 		        sender.sendMessage(ChatColor.AQUA + "/mf gate cancel");
             }
             if (args[1].equalsIgnoreCase("6")) {
-                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Medieval Factions Commands Page 6/6 == " + "\n");
-		        sender.sendMessage(ChatColor.AQUA + "/mf duel challenge (player) (<optional>time limit in seconds)");
-		        sender.sendMessage(ChatColor.AQUA + "/mf duel accept (<optional>player)");
+                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Comandos Medieval Factions Página 6/6 == " + "\n");
+		        sender.sendMessage(ChatColor.AQUA + "/mf duel challenge (jugador) (<opcional>tiempo límite en segundos)");
+		        sender.sendMessage(ChatColor.AQUA + "/mf duel accept (<opcional>jugador)");
 		        sender.sendMessage(ChatColor.AQUA + "/mf duel cancel");
-                sender.sendMessage(ChatColor.AQUA + "/mf bypass - Bypass protections.");
-                sender.sendMessage(ChatColor.AQUA + "/mf config show - Show config values.");
-                sender.sendMessage(ChatColor.AQUA + "/mf config set (option) (value) - Set a config value.");
-                sender.sendMessage(ChatColor.AQUA + "/mf force - Force the plugin to perform certain actions." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf version - Check plugin version." + "\n");
-                sender.sendMessage(ChatColor.AQUA + "/mf resetpowerlevels - Reset player power records and faction cumulative power levels." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf bypass - Ignorar protecciones.");
+                sender.sendMessage(ChatColor.AQUA + "/mf config show - Mostrar valores de configuración.");
+                sender.sendMessage(ChatColor.AQUA + "/mf config set (opción) (valor) - Elegir un valor de configuración.");
+                sender.sendMessage(ChatColor.AQUA + "/mf force - Fuerza el plugin a realizar ciertas acciones." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf version - Ver versión del plugin." + "\n");
+                sender.sendMessage(ChatColor.AQUA + "/mf resetpowerlevels - Restaurar poderes del jugador y niveles de facción." + "\n");
             }
         }
         return true;
     }
 
     static void sendPageOne(CommandSender sender) {
-        sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Medieval Factions Commands Page 1/6 == " + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf help # - Show lists of useful commands." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf list - List all factions on the server." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf info - See your faction or another faction's information." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf members - List the members of your faction or another faction." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf join - Join a faction if you've been invited." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf leave - Leave your current faction." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf create - Create a new faction." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf invite - Invite a player to your faction." + "\n");
-        sender.sendMessage(ChatColor.AQUA + "/mf desc - Set your faction description." + "\n");
+        sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == Comandos Medieval Factions Página 1/6 == " + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf help # - Muestra lista de comandos." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf list - Muestra todas las facciones del servidor." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf info - Ver información de tu facción u otra especificada." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf members - Ver lista de miembros de tu facción u otra especificada." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf join - Unirte a una facción, si fuiste invitado." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf leave - Abandona tu facción actual." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf create - Crea una nueva facción." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf invite - Invita un jugador a tu facción." + "\n");
+        sender.sendMessage(ChatColor.AQUA + "/mf desc - Dale una descripción a tu facción." + "\n");
     }
 }
