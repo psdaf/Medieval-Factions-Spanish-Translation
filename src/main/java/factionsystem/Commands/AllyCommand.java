@@ -44,52 +44,52 @@ public class AllyCommand {
                                         if (!playersFaction.isEnemy(targetFactionName)) {
 
                                             playersFaction.requestAlly(targetFactionName);
-                                            player.sendMessage(ChatColor.GREEN + "Attempted to ally with " + targetFactionName);
+                                            player.sendMessage(ChatColor.GREEN + "Intentó aliarse con " + targetFactionName);
 
-                                            sendAllPlayersInFactionMessage(targetFaction,ChatColor.GREEN + "" + playersFaction.getName() + " has attempted to ally with " + targetFactionName + "!");
+                                            sendAllPlayersInFactionMessage(targetFaction,ChatColor.GREEN + "" + playersFaction.getName() + " ¡intentó aliarse con " + targetFactionName + "!");
 
                                             if (playersFaction.isRequestedAlly(targetFactionName) && targetFaction.isRequestedAlly(playersFaction.getName())) {
                                                 // ally factions
                                                 playersFaction.addAlly(targetFactionName);
                                                 getFaction(targetFactionName, main.factions).addAlly(playersFaction.getName());
-                                                player.sendMessage(ChatColor.GREEN + "Your faction is now allied with " + targetFactionName + "!");
-                                                sendAllPlayersInFactionMessage(targetFaction, ChatColor.GREEN + "Your faction is now allied with " + playersFaction.getName() + "!");
+                                                player.sendMessage(ChatColor.GREEN + "¡Tu facción y " + targetFactionName + " ahora son aliados!");
+                                                sendAllPlayersInFactionMessage(targetFaction, ChatColor.GREEN + "¡Tu facción y " + playersFaction.getName() + " ahora son aliados!");
                                             }
                                         }
                                         else {
-                                            player.sendMessage(ChatColor.RED + "That faction is currently your enemy! Make peace before trying to ally with them.");
+                                            player.sendMessage(ChatColor.RED + "¡Esa facción es enemiga! Haz la paz antes de tratar aliarte con ellos.");
                                         }
 
                                     }
                                     else {
-                                        player.sendMessage(ChatColor.RED + "You've already requested an alliance with this faction!");
+                                        player.sendMessage(ChatColor.RED + "¡Ya haz pedido una alianza a esta facción!");
                                     }
 
                                 }
                                 else {
-                                    player.sendMessage(ChatColor.RED + "That faction is already your ally!");
+                                    player.sendMessage(ChatColor.RED + "¡Esa facción ya es aliada!");
                                 }
                             }
                             else {
-                                player.sendMessage(ChatColor.RED + "That faction wasn't found!");
+                                player.sendMessage(ChatColor.RED + "¡Facción no encontrada!");
                             }
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "You can't ally with your own faction?");
+                            player.sendMessage(ChatColor.RED + "No puedes aliarte con tu propia facción...?");
                         }
 
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "Usage: /mf ally (faction-name)");
+                        player.sendMessage(ChatColor.RED + "Uso: /mf ally (nombre-facción)");
                     }
 
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "You need to be the owner of a faction or an officer of a faction to use this command.");
+                    player.sendMessage(ChatColor.RED + "Tienes que ser dueño u oficial de una facción para usar este comando.");
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "You need to be in a faction to use this command.");
+                player.sendMessage(ChatColor.RED + "Tienes que ser parte de una facción para usar este comando.");
             }
         }
     }
