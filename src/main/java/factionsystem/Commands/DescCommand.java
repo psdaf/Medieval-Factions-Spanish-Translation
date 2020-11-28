@@ -33,17 +33,17 @@ public class DescCommand {
                         }
 
                         faction.setDescription(newDesc);
-                        player.sendMessage(ChatColor.AQUA + "Description set!");
+                        player.sendMessage(ChatColor.AQUA + "¡Descripción hecha!");
                         return true;
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "Usage: /mf desc (description)");
+                        player.sendMessage(ChatColor.RED + "Uso: /mf desc (descripción)");
                         return false;
                     }
                 }
             }
             if (!owner) {
-                player.sendMessage(ChatColor.RED + "You need to be the owner of a faction to use this command.");
+                player.sendMessage(ChatColor.RED + "Tienes que ser miembro de una facción para usar este comando.");
                 return false;
             }
         }
