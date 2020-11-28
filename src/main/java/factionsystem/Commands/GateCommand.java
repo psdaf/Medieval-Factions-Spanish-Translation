@@ -38,7 +38,7 @@ public class GateCommand {
 						if (main.creatingGatePlayers.containsKey(player.getUniqueId()))
 						{
 							main.creatingGatePlayers.remove(player.getUniqueId());
-							player.sendMessage(ChatColor.RED + "Creating gate cancelled!");
+							player.sendMessage(ChatColor.RED + "¡Creación de verja cancelada!");
 							return;
 						}
 					}
@@ -47,7 +47,7 @@ public class GateCommand {
 						if (main.creatingGatePlayers.containsKey(player.getUniqueId()))
 						{
 							main.creatingGatePlayers.remove(player.getUniqueId());
-							player.sendMessage(ChatColor.RED + "You are already creating a gate!");
+							player.sendMessage(ChatColor.RED + "¡Ya estás creando una verja!");
 							return;
 						}
 						else
@@ -64,12 +64,12 @@ public class GateCommand {
 				        			}
 									UtilitySubsystem.startCreatingGate(main, player, gateName);
 									//TODO: Config setting for magic gate tool.
-									player.sendMessage(ChatColor.AQUA + "Creating gate '" + gateName + "'.\nClick on a block with a Golden Hoe to select the first point.");
+									player.sendMessage(ChatColor.AQUA + "Creando verja '" + gateName + "'.\nSelecciona el primer punto clickeando el bloque con una azada de oro.");
 									return;
 								}
 								else
 								{
-									player.sendMessage(ChatColor.RED + "You must be a faction officer or owner to use this command.");
+									player.sendMessage(ChatColor.RED + "Tienes que ser dueño u oficial de una facción para realizar esta función.");
 									return;
 								}
 							}
@@ -82,7 +82,7 @@ public class GateCommand {
 						{
 							if (faction.getGates().size() > 0)
 							{
-								player.sendMessage(ChatColor.AQUA + "Faction Gates");
+								player.sendMessage(ChatColor.AQUA + "Verjas de Facción");
 								for (Gate gate : faction.getGates())
 								{
 									player.sendMessage(ChatColor.AQUA + String.format("%s: %s", gate.getName(), gate.coordsToString()));
@@ -90,13 +90,13 @@ public class GateCommand {
 							}
 							else
 							{
-								player.sendMessage(ChatColor.RED + "Your faction has no gates defined.");
+								player.sendMessage(ChatColor.RED + "Tu facción no tiene verjas definidas.");
 								return;
 							}
 						}
 						else
 						{
-							player.sendMessage(ChatColor.RED + String.format("You are not a member of any faction."));
+							player.sendMessage(ChatColor.RED + String.format("No eres miembro de ninguna facción."));
 							return;
 						}
 					}
@@ -113,30 +113,30 @@ public class GateCommand {
 									if (faction.isOfficer(player.getUniqueId()) || faction.isOwner(player.getUniqueId()))
 									{
 										faction.removeGate(gate);
-										player.sendMessage(ChatColor.AQUA + String.format("Removed gate '%s'.", gate.getName()));
+										player.sendMessage(ChatColor.AQUA + String.format("Se removió la verja '%s'.", gate.getName()));
 										return;
 									}
 									else
 									{
-										player.sendMessage(ChatColor.RED + "You must be a faction officer or owner to use this command.");
+										player.sendMessage(ChatColor.RED + "Tienes que ser dueño u oficial de una facción para usar este comando.");
 										return;
 									}
 								}
 								else
 								{
-									player.sendMessage(ChatColor.RED + String.format("Error: Could not find gate faction.", gate.getName()));
+									player.sendMessage(ChatColor.RED + String.format("Error: No se pudo encontrar la verja de facción.", gate.getName()));
 									return;
 								}
 							}
 							else
 							{
-								player.sendMessage(ChatColor.RED + "Target block is not part of a gate.");
+								player.sendMessage(ChatColor.RED + "El bloque seleccionado no es parte de una verja.");
 								return;
 							}
 						}
 						else
 						{
-							player.sendMessage(ChatColor.RED + "No block detected to check for gate.");
+							player.sendMessage(ChatColor.RED + "Bloque no detectado para el chequeo de verja.");
 							return;
 						}
 					}
@@ -156,45 +156,45 @@ public class GateCommand {
 										{
 											String name = UtilitySubsystem.createStringFromArgIndexOnwards(2, args);
 											gate.setName(name);
-											player.sendMessage(ChatColor.AQUA + String.format("Changed gate name to '%s'.", gate.getName()));
+											player.sendMessage(ChatColor.AQUA + String.format("Nombre de verja cambiado a '%s'.", gate.getName()));
 											return;
 										}
 										else
 										{
-											player.sendMessage(ChatColor.RED + "You must be a faction officer or owner to use this command.");
+											player.sendMessage(ChatColor.RED + "Tienes que ser dueño u oficial de una facción para hacer esto.);
 											return;
 										}
 									}
 									else
 									{
-										player.sendMessage(ChatColor.RED + "Error: Could not find gate's faction.");
+										player.sendMessage(ChatColor.RED + "Error: No se encontró la facción de la verja.");
 										return;
 									}
 								}
 								else
 								{
-									player.sendMessage(ChatColor.AQUA + String.format("That is the '%s' gate.", gate.getName()));
+									player.sendMessage(ChatColor.AQUA + String.format("Verja '%s'.", gate.getName()));
 									return;
 								}
 							}
 							else
 							{
-								player.sendMessage(ChatColor.RED + "Target block is not part of a gate.");
+								player.sendMessage(ChatColor.RED + "El bloque seleccionado no es parte de una verja.");
 								return;
 							}
 						}
 						else
 						{
-							player.sendMessage(ChatColor.RED + "No block detected to check for gate.");
+							player.sendMessage(ChatColor.RED + "Bloque no detectado para el chequeo de verja.");
 							return;
 						}
 					}						
 				}
 				else
 				{
-			        sender.sendMessage(ChatColor.RED + "Sub-commands:");
-			        sender.sendMessage(ChatColor.AQUA + "/mf gate create (<optional>name)");
-			        sender.sendMessage(ChatColor.RED + "/mf gate name (<optional>name)");
+			        sender.sendMessage(ChatColor.RED + "Sub-comandos:");
+			        sender.sendMessage(ChatColor.AQUA + "/mf gate create (<opcional>nombre)");
+			        sender.sendMessage(ChatColor.RED + "/mf gate name (<opcional>nombre)");
 			        sender.sendMessage(ChatColor.RED + "/mf gate list");
 			        sender.sendMessage(ChatColor.RED + "/mf gate remove");
 			        sender.sendMessage(ChatColor.RED + "/mf gate cancel");
@@ -202,7 +202,7 @@ public class GateCommand {
 				}
 			}
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command you need the following permission: 'mf.gate'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'mf.gate'");
             }
 
 		}
