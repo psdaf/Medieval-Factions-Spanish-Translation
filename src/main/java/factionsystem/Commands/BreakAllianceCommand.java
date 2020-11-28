@@ -42,35 +42,35 @@ public class BreakAllianceCommand {
                                     if ((faction.isAlly(factionName))) {
                                         // remove alliance
                                         faction.removeAlly(factionName);
-                                        player.sendMessage(ChatColor.GREEN + "Alliance has been broken with " + factionName + "!");
+                                        player.sendMessage(ChatColor.GREEN + "¡La alianza ha sido rota con " + factionName + "!");
 
                                         // add declarer's faction to new enemy's enemyList
                                         main.factions.get(i).removeAlly(faction.getName());
                                         for (int j = 0; j < main.factions.size(); j++) {
                                             if (main.factions.get(j).getName().equalsIgnoreCase(factionName)) {
-                                                sendAllPlayersInFactionMessage(main.factions.get(j), ChatColor.RED + faction.getName() + " has broken their alliance your faction!");
+                                                sendAllPlayersInFactionMessage(main.factions.get(j), ChatColor.RED + faction.getName() + " ha roto su alianza con tu facción.");
                                             }
                                         }
                                     }
                                     else {
-                                        player.sendMessage(ChatColor.RED + "Your faction is not allied with " + factionName);
+                                        player.sendMessage(ChatColor.RED + "Tu facción ahora está aliada con " + factionName);
                                     }
 
                                 }
                                 else {
-                                    player.sendMessage(ChatColor.RED + "You can't declare break an alliance with your own faction.");
+                                    player.sendMessage(ChatColor.RED + "No puedes hacer eso con tu propia facción.");
                                 }
                             }
                         }
 
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "Usage: /mf breakalliance (faction-name)");
+                        player.sendMessage(ChatColor.RED + "Uso: /mf breakalliance (nombre-facción)");
                     }
                 }
             }
             if (!owner) {
-                player.sendMessage(ChatColor.RED + "You have to own a faction or be an officer of a faction to use this command.");
+                player.sendMessage(ChatColor.RED + "Tienes que ser dueño u oficial de una facción para usar este comando.");
             }
         }
     }
