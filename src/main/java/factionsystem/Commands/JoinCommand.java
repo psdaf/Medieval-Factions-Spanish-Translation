@@ -38,22 +38,22 @@ public class JoinCommand {
                                 } catch (Exception ignored) {
 
                                 }
-                                player.sendMessage(ChatColor.GREEN + "You joined the faction!");
+                                player.sendMessage(ChatColor.GREEN + "¡Te uniste a la facción!");
                                 return true;
                             }
                             else {
-                                player.sendMessage(ChatColor.RED + "You're already in a faction, sorry!");
+                                player.sendMessage(ChatColor.RED + "Ya perteneces a una facción.");
                                 return false;
                             }
 
                         } else {
-                            player.sendMessage(ChatColor.RED + "You're not invited to this faction!");
+                            player.sendMessage(ChatColor.RED + "No fuiste invitado a esta facción.");
                             return false;
                         }
                     }
                 }
             } else {
-                player.sendMessage(ChatColor.RED + "Usage: /mf join (faction-name)");
+                player.sendMessage(ChatColor.RED + "Uso: /mf join (nombre-facción)");
                 return false;
             }
         }
