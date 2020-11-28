@@ -21,7 +21,7 @@ public class CheckAccessCommand {
 
             if (args.length > 1) {
                 if (args[1].equalsIgnoreCase("cancel")) {
-                    player.sendMessage(ChatColor.RED + "Cancelled!");
+                    player.sendMessage(ChatColor.RED + "¡Cancelado!");
                     if (main.playersCheckingAccess.contains(player.getUniqueId())) {
                         main.playersCheckingAccess.remove(player.getUniqueId());
                         return;
@@ -31,10 +31,10 @@ public class CheckAccessCommand {
 
             if (!main.playersCheckingAccess.contains(player.getUniqueId())) {
                 main.playersCheckingAccess.add(player.getUniqueId());
-                player.sendMessage(ChatColor.GREEN + "Right click a locked block to check who has access to it! Type '/mf checkaccess cancel' to cancel!");
+                player.sendMessage(ChatColor.GREEN + "¡Click derecho en un bloque bloqueado para ver quién tiene acceso a él! Escribe '/mf checkaccess cancel' para cancelar.");
             }
             else {
-                player.sendMessage(ChatColor.RED + "You have already entered this command! Type '/mf checkaccess cancel' to cancel!");
+                player.sendMessage(ChatColor.RED + "¡Ya usaste este comando! Escribe '/mf checkaccess cancel' para cancelar.");
             }
 
         }
