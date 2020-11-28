@@ -35,22 +35,22 @@ public class EditLawCommand {
                         }
 
                         if (playersFaction.editLaw(lawToEdit, newLaw)) {
-                            player.sendMessage(ChatColor.GREEN + "Law " + (lawToEdit + 1) + " edited!");
+                            player.sendMessage(ChatColor.GREEN + "¡Ley " + (lawToEdit + 1) + " editada!");
                         }
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "Usage: /mf editlaw (number) (edited law)");
+                        player.sendMessage(ChatColor.RED + "Uso: /mf editlaw (número) (ley editada)");
                     }
 
                 }
 
             }
             else {
-                player.sendMessage(ChatColor.RED + "You need to be in a faction to use this command!");
+                player.sendMessage(ChatColor.RED + "Tienes que ser miembro de una facción para usar este comando.");
             }
         }
         else {
-            sender.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'mf.editlaw'");
+            sender.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'mf.editlaw'");
         }
     }
 
