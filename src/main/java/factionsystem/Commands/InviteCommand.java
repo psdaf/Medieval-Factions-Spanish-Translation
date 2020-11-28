@@ -35,11 +35,11 @@ public class InviteCommand {
                                 faction.invite(playerUUID);
                                 try {
                                     Player target = Bukkit.getServer().getPlayer(args[1]);
-                                    target.sendMessage(ChatColor.GREEN + "You've been invited to " + faction.getName() + "! Type /mf join " + faction.getName() + " to join.");
+                                    target.sendMessage(ChatColor.GREEN + "Fuiste invitado a " + faction.getName() + "! Escribe /mf join " + faction.getName() + " para unirte.");
                                 } catch (Exception ignored) {
 
                                 }
-                                player.sendMessage(ChatColor.GREEN + "Invitation sent!");
+                                player.sendMessage(ChatColor.GREEN + "¡Invitación enviada");
 
                                 int seconds = 60 * 60 * 24;
 
@@ -50,7 +50,7 @@ public class InviteCommand {
                                         faction.uninvite(playerUUID);
                                         try {
                                             Player target = Bukkit.getServer().getPlayer(args[1]);
-                                            target.sendMessage(ChatColor.RED + "Your invitation to " + faction.getName() + " has expired!.");
+                                            target.sendMessage(ChatColor.RED + "Tu invitación a " + faction.getName() + " ha expirado.");
                                         } catch (Exception ignored) {
                                             // player offline
                                         }
@@ -60,21 +60,21 @@ public class InviteCommand {
                                 return true;
                             }
                             else {
-                                player.sendMessage(ChatColor.RED + "That player is already in a faction, sorry!");
+                                player.sendMessage(ChatColor.RED + "Ese jugador ya pertenece a una facción.");
                                 return false;
                             }
 
 
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /mf invite (player-name)");
+                            player.sendMessage(ChatColor.RED + "Uso: /mf invite (nombre-jugador)");
                             return false;
                         }
                     }
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "You need to be in a faction to use this command.");
+                player.sendMessage(ChatColor.RED + "Tienes que ser miembro de una facción para usar este comando.");
             }
         }
         return false;
