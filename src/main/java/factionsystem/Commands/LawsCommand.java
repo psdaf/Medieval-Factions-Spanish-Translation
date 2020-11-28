@@ -37,7 +37,7 @@ public class LawsCommand {
                     }
                 }
                 if (!exists) {
-                    player.sendMessage(ChatColor.RED + "That faction wasn't found!");
+                    player.sendMessage(ChatColor.RED + "Facción no encontrada.");
                     return;
                 }
             }
@@ -46,7 +46,7 @@ public class LawsCommand {
 
                 if (faction.getNumLaws() != 0) {
 
-                    player.sendMessage(ChatColor.AQUA + "\n == Laws of " + faction.getName() + " == ");
+                    player.sendMessage(ChatColor.AQUA + "\n == Reglas de " + faction.getName() + " == ");
 
                     // list laws
                     int counter = 1;
@@ -58,23 +58,23 @@ public class LawsCommand {
                 }
                 else {
                     if (args.length == 1) {
-                        player.sendMessage(ChatColor.RED + "Your faction doesn't have any laws.");
+                        player.sendMessage(ChatColor.RED + "Tu facción no tiene ninguna regla.");
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "That faction doesn't have any laws.");
+                        player.sendMessage(ChatColor.RED + "Esa facción no tiene ninguna regla.");
                     }
 
                 }
 
             }
             else {
-                player.sendMessage(ChatColor.RED + "You need to be in a faction to use this command!");
+                player.sendMessage(ChatColor.RED + "Tienes que ser miembro de una facción para usar ese comando");
 
             }
 
         }
         else {
-            sender.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'mf.laws'");
+            sender.sendMessage(ChatColor.RED + "Para usar ese comando, necesitas el permiso: 'mf.laws'");
         }
     }
 
