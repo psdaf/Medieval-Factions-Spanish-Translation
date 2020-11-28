@@ -44,13 +44,13 @@ public class DeclareWarCommand {
 
                                             // if faction is vassal of declarer
                                             if (faction.isVassal(factionName)) {
-                                                player.sendMessage(ChatColor.RED + "You can't declare war on your own vassal!");
+                                                player.sendMessage(ChatColor.RED + "¡No puedes declarar guerra a tu propio vasallo!");
                                                 return;
                                             }
 
                                             // if lieges aren't the same
                                             if (!main.factions.get(i).getLiege().equalsIgnoreCase(faction.getLiege())) {
-                                                player.sendMessage(ChatColor.RED + "You can't declare war on this faction as they are a vassal! You must declare war on their liege " + main.factions.get(i).getLiege() + " instead!");
+                                                player.sendMessage(ChatColor.RED + "No puedes declarar la guerra a esta facción, ya que es vasalla. ¡Tienes que declarar guerra al honorado " + main.factions.get(i).getLiege() + " en cambio!");
                                                 return;
                                             }
 
@@ -58,7 +58,7 @@ public class DeclareWarCommand {
 
                                         // disallow if trying to declare war on liege
                                         if (faction.isLiege(factionName)) {
-                                            player.sendMessage(ChatColor.RED + "You can't declare war on your liege! Try '/mf declareindependence' instead!");
+                                            player.sendMessage(ChatColor.RED + "¡No puedes declararle la guerra a tu alteza! Intenta '/mf declareindependence' para declarar la independencia.");
                                             return;
                                         }
 
@@ -73,7 +73,7 @@ public class DeclareWarCommand {
 
                                             for (int j = 0; j < main.factions.size(); j++) {
                                                 if (main.factions.get(j).getName().equalsIgnoreCase(factionName)) {
-                                                    main.utilities.sendAllPlayersOnServerMessage(ChatColor.RED + faction.getName() + " has declared war against " + factionName + "!");
+                                                    main.utilities.sendAllPlayersOnServerMessage(ChatColor.RED + faction.getName() + " le declaró la guerra a " + factionName + "!");
                                                 }
                                             }
 
@@ -81,29 +81,29 @@ public class DeclareWarCommand {
                                             invokeAlliances(main.factions.get(i).getName(), faction.getName(), main.factions);
                                         }
                                         else {
-                                            player.sendMessage(ChatColor.RED + "You can't declare war on your ally!");
+                                            player.sendMessage(ChatColor.RED + "¡No puedes declararle la guerra a un aliado!");
                                         }
 
                                     }
                                     else {
-                                        player.sendMessage(ChatColor.RED + "Your faction is already at war with " + factionName);
+                                        player.sendMessage(ChatColor.RED + "Tu facción ya está en guerra con " + factionName);
                                     }
 
                                 }
                                 else {
-                                    player.sendMessage(ChatColor.RED + "You can't declare war on your own faction.");
+                                    player.sendMessage(ChatColor.RED + "No puedes declarar guerra a tu propia facción.");
                                 }
                             }
                         }
 
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "Usage: /mf declarewar (faction-name)");
+                        player.sendMessage(ChatColor.RED + "Uso: /mf declarewar (nombre-facción)");
                     }
                 }
             }
             if (!owner) {
-                player.sendMessage(ChatColor.RED + "You have to own a faction or be an officer of a faction to use this command.");
+                player.sendMessage(ChatColor.RED + "Tienes que ser miembro u oficial de una facción para usar este comando.");
             }
         }
     }
