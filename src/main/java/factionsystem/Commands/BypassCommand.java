@@ -22,16 +22,16 @@ public class BypassCommand {
 
                 if (!main.adminsBypassingProtections.contains(player.getUniqueId())) {
                     main.adminsBypassingProtections.add(player.getUniqueId());
-                    player.sendMessage(ChatColor.GREEN + "You are now bypassing protections provided by Medieval Factions.");
+                    player.sendMessage(ChatColor.GREEN + "Tu jugador ignorará las protecciones de Medieval Factions.");
                 }
                 else {
                     main.adminsBypassingProtections.remove(player.getUniqueId());
-                    player.sendMessage(ChatColor.GREEN + "You are no longer bypassing protections provided by Medieval Factions.");
+                    player.sendMessage(ChatColor.GREEN + "Tu jugador ya no ignora las protecciones de Medieval Factions.");
                 }
 
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'mf.bypass");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'mf.bypass");
             }
         }
 
