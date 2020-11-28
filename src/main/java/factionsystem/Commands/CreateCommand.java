@@ -25,7 +25,7 @@ public class CreateCommand {
             // player membership check
             for (Faction faction : main.factions) {
                 if (faction.isMember(player.getUniqueId())) {
-                    player.sendMessage(ChatColor.RED + "Sorry, you're already in a faction. Leave if you want to create a different one.");
+                    player.sendMessage(ChatColor.RED + "Ya perteneces a una facción. Tienes que salir antes de crear una nueva.");
                     return false;
                 }
             }
@@ -52,18 +52,18 @@ public class CreateCommand {
                     main.factions.add(temp);
                     // TODO: Make thread safe
                     main.factions.get(main.factions.size() - 1).addMember(player.getUniqueId(), getPlayersPowerRecord(player.getUniqueId(), main.playerPowerRecords).getPowerLevel());
-                    System.out.println("Faction " + name + " created.");
-                    player.sendMessage(ChatColor.AQUA + "Faction " + name + " created.");
+                    System.out.println("La facción " + name + " fue creada.");
+                    player.sendMessage(ChatColor.AQUA + "La facción " + name + " fue creada.");
                     return true;
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "Sorry! That faction already exists.");
+                    player.sendMessage(ChatColor.RED + "Esta facción ya existe.");
                     return false;
                 }
             } else {
 
                 // wrong usage
-                sender.sendMessage(ChatColor.RED + "Usage: /mf create [faction-name]");
+                sender.sendMessage(ChatColor.RED + "Uso: /mf create [nombre-facción]");
                 return false;
             }
         }
